@@ -1,10 +1,18 @@
 import React from "react";
 
+//react event practice
 function Button(props) {
+  const handleClick = (a) => {
+    alert(props.bg + " " + a);
+  };
+
   return (
     <>
-      <button style={{ color: props.color }}>
-        This is a {props.color} button
+      <button
+        onClick={() => handleClick("Button Clicked")}
+        style={{ color: props.color, backgroundColor: props.bg }}
+      >
+        This is a {props.bg} button
       </button>
     </>
   );
