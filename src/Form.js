@@ -2,21 +2,27 @@ import React, { useEffect, useState, useContext, useRef } from "react";
 import { MyContext } from "./Context";
 
 export default function Form(props) {
-  //context
+  // Context
   const value = useContext(MyContext);
+
+  // State
   const [inputs, setInputs] = useState({});
+  const [count, setCount] = useState(0);
 
-  //useRef
+  // Ref
   const inputElement = useRef();
-  const focusInput = () => {
-    inputElement.current.focus();
-  };
 
-  const cars = [
-    { id: 1, brand: "Ford" },
-    { id: 2, brand: "BMW" },
-    { id: 3, brand: "Audi" },
-  ];
+  // Effect to update count every second
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [count]);
+
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!inputs.fname || !inputs.lname) {
@@ -24,30 +30,36 @@ export default function Form(props) {
       return;
     }
     alert(
-      `Welcome ${inputs.fname + " " + inputs.lname}! You have selected ${
-        inputs.carBrand
-      }`
+      `Welcome ${inputs.fname} ${inputs.lname}! You have selected ${inputs.carBrand}`
     );
     setInputs({});
   };
 
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCount((count) => count + 1);
-    }, 1000);
-  }, [count]);
-
+  // Function to handle input changes
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
   };
+
+  // Function to focus on the input element
+  const focusInput = () => {
+    inputElement.current.focus();
+  };
+
+  // Cars array
+  const cars = [
+    { id: 1, brand: "Ford" },
+    { id: 2, brand: "BMW" },
+    { id: 3, brand: "Audi" },
+  ];
+
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        {/* <h1>I've rendered {count} times!</h1> */}
+    <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{ maxWidth: "400px", margin: "0 auto" }}
+      >
         <h2>{value.text}</h2>
         <div>
           <label>
@@ -60,6 +72,8 @@ export default function Form(props) {
               onChange={handleChange}
             />
           </label>
+        </div>
+        <div>
           <label>
             Enter Your Last Name:
             <input
@@ -70,24 +84,27 @@ export default function Form(props) {
             />
           </label>
         </div>
-        <br />
-        <label>
-          Select car:
-          <select
-            name="carBrand"
-            value={inputs.carBrand || "BMW"}
-            onChange={handleChange}
-          >
-            {cars.map((car) => (
-              <option value={car.brand}>{car.brand}</option>
-            ))}
-          </select>
-        </label>
+        <div>
+          <label>
+            Select car:
+            <select
+              name="carBrand"
+              value={inputs.carBrand || "BMW"}
+              onChange={handleChange}
+            >
+              {cars.map((car) => (
+                <option key={car.id} value={car.brand}>
+                  {car.brand}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
         <br />
         <input type="submit" />
-        <br />
       </form>
+      <br />
       <button onClick={focusInput}>Focus Input</button>
-    </>
+    </div>
   );
 }
