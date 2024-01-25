@@ -3,7 +3,7 @@ import { MyContext } from "./Context";
 
 export default function Form(props) {
   // Context
-  const value = useContext(MyContext);
+  const { name, setName } = useContext(MyContext);
 
   // State
   const [inputs, setInputs] = useState({});
@@ -60,7 +60,9 @@ export default function Form(props) {
         onSubmit={handleSubmit}
         style={{ maxWidth: "400px", margin: "0 auto" }}
       >
-        <h2>{value.text}</h2>
+        {/* <h2>{text}</h2> */}
+        <h2>{name}</h2>
+
         <div>
           <label>
             Enter Your First Name:
@@ -105,6 +107,7 @@ export default function Form(props) {
       </form>
       <br />
       <button onClick={focusInput}>Focus Input</button>
+      <button onClick={() => setName("test")}>Test</button>
     </div>
   );
 }

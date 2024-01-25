@@ -1,11 +1,13 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const MyContext = createContext("");
 
 const Context = (props) => {
-  const text = "This is context";
+  const [name, setName] = useState("this is from  context");
   return (
-    <MyContext.Provider value={{ text }}>{props.children}</MyContext.Provider>
+    <MyContext.Provider value={{ name, setName }}>
+      {props.children}
+    </MyContext.Provider>
   );
 };
 
