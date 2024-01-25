@@ -30,6 +30,9 @@ export default function Home() {
       <p>
         Fill the form form <Link to="/form">Click</Link>
       </p>
+      <p>
+        Check out this counter <Link to="/counter">Here</Link>
+      </p>
     </>
   );
 }
