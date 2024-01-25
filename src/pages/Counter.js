@@ -1,6 +1,6 @@
 import React from "react";
 import UseStateCounter from "../components/UseStateCounter";
-import UseReducerCounter from "../components/UseReducerCounter";
+import UseReducerCounter from "../components/UseReducerToDO";
 
 export default function Counter() {
   return (
