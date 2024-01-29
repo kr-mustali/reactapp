@@ -42,7 +42,13 @@ export default function Home() {
         Fill the form form <Link to="/form">Click</Link>
       </p>
       <p>
+        Check out this REST API example <Link to="/restapi">Here</Link>
+      </p>
+      <p>
         Check out this counter <Link to="/counter">Here</Link>
+      </p>
+      <p>
+        Check out this GithubUserSearch <Link to="/gitsearch">Here</Link>
       </p>
       <FirstComponent />
     </>

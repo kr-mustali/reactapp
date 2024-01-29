@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Context from "./Context";
 import Counter from "./pages/Counter";
 import Restapi from "./pages/Restapi";
+import GithubUserSearch from "./pages/GithubUserSearch";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/form" element={<Form />} />
           <Route path="/counter" element={<Counter />} />
           <Route path="/restapi" element={<Restapi />} />
+          <Route path="/gitsearch" element={<GithubUserSearch />} />
         </Routes>
       </BrowserRouter>
     </Context>

@@ -1,0 +1,50 @@
+.app {
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.search-form input,
+.search-form button {
+  width: 280px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.search-form input {
+  border: 1px solid grey;
+  outline: none;
+}
+
+.search-form button {
+  margin-left: 10px;
+  background-color: rgb(54, 179, 228);
+  border: 1px solid rgb(54, 179, 228);
+}
+
+.user {
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.repos {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
