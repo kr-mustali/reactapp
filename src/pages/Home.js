@@ -50,6 +50,9 @@ export default function Home() {
       <p>
         Check out this GithubUserSearch <Link to="/gitsearch">Here</Link>
       </p>
+      <p>
+        Check out this Password Validator <Link to="/passvalid">Here</Link>
+      </p>
       <FirstComponent />
     </>
   );

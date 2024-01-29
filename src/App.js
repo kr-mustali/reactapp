@@ -5,6 +5,7 @@ import Context from "./Context";
 import Counter from "./pages/Counter";
 import Restapi from "./pages/Restapi";
 import GithubUserSearch from "./pages/GithubUserSearch";
+import PasswordValidator from "./pages/PasswordValidator";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/counter" element={<Counter />} />
           <Route path="/restapi" element={<Restapi />} />
           <Route path="/gitsearch" element={<GithubUserSearch />} />
+          <Route path="/passvalid" element={<PasswordValidator />} />
         </Routes>
       </BrowserRouter>
     </Context>
