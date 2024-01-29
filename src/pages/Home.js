@@ -53,6 +53,9 @@ export default function Home() {
       <p>
         Check out this Password Validator <Link to="/passvalid">Here</Link>
       </p>
+      <p>
+        Check out this Crypto Table <Link to="/crypto">Here</Link>
+      </p>
       <FirstComponent />
     </>
   );

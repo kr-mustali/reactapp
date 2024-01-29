@@ -6,6 +6,7 @@ import Counter from "./pages/Counter";
 import Restapi from "./pages/Restapi";
 import GithubUserSearch from "./pages/GithubUserSearch";
 import PasswordValidator from "./pages/PasswordValidator";
+import Crypto from "./pages/Crypto";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/restapi" element={<Restapi />} />
           <Route path="/gitsearch" element={<GithubUserSearch />} />
           <Route path="/passvalid" element={<PasswordValidator />} />
+          <Route path="/crypto" element={<Crypto />} />
         </Routes>
       </BrowserRouter>
     </Context>
